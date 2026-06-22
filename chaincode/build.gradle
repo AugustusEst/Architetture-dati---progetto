@@ -1,0 +1,37 @@
+plugins {
+    id 'application'
+    id 'com.gradleup.shadow' version '9.2.2'
+}
+
+group = 'project'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.hyperledger.fabric-chaincode-java:fabric-chaincode-shim:2.5.+'
+    implementation 'com.owlike:genson:1.6'
+}
+
+compileJava {
+    options.release = 11
+}
+
+application {
+    mainClass = 'org.hyperledger.fabric.contract.ContractRouter'
+}
+
+shadowJar {
+    archiveBaseName = 'chaincode'
+    archiveVersion = ''
+    archiveClassifier = ''
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+
+    mergeServiceFiles()
+
+    manifest {
+        attributes 'Main-Class': 'org.hyperledger.fabric.contract.ContractRouter'
+    }
+}
