@@ -1,0 +1,44 @@
+test:
+  name: transaction-log-benchmark
+  description: Benchmark Hyperledger Fabric transaction-log chaincode
+  workers:
+    number: 3
+  rounds:
+    - label: create-10-tps
+      description: CreateTransaction 10 TPS
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: caliper/workloads/createTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: create10
+
+    - label: create-25-tps
+      description: CreateTransaction 25 TPS
+      txNumber: 250
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 25
+      workload:
+        module: caliper/workloads/createTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: create25
+
+    - label: create-50-tps
+      description: CreateTransaction 50 TPS
+      txNumber: 500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: caliper/workloads/createTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: create50
