@@ -10,7 +10,7 @@ class CreateTransactionWorkload extends WorkloadModuleBase {
     }
 
     async submitTransaction() {
-        const transactionId = `${this.workerIndex}-${this.transactionIndex++}`;
+        const transactionId = `${this.roundIndex}-${this.workerIndex}-${this.transactionIndex++}`;
         const timestamp = new Date().toISOString();
         const sender = `sender-${this.workerIndex}`;
         const receiver = `receiver-${this.workerIndex}`;
