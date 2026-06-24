@@ -1,3 +1,5 @@
 fabric-samples
 .idea
 .gradle
+node_modules
+chaincode/build

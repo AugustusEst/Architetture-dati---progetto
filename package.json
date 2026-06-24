@@ -1,0 +1,25 @@
+{
+  "name": "architetture-dati---progetto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AugustusEst/Architetture-dati---progetto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AugustusEst/Architetture-dati---progetto/issues"
+  },
+  "homepage": "https://github.com/AugustusEst/Architetture-dati---progetto#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.1",
+    "@hyperledger/caliper-cli": "^0.7.1",
+    "@hyperledger/fabric-gateway": "^1.7.1"
+  }
+}
