@@ -128,7 +128,7 @@
                 <li>DLT: &nbsp<span style="font-weight: 500;">fabric</span></li>
                 <li>Name: &nbsp<span style="font-weight: 500;">transaction-log-benchmark</span></li>
                 <li>Description: &nbsp<span style="font-weight: 500;">Benchmark Hyperledger Fabric transaction-log chaincode</span></li>
-                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">3</span></li>
+                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">12</span></li>
                 <li><a href="#benchmarkInfo">Details</a></li>
             </ul>
             <ul>
@@ -137,6 +137,15 @@
                     <li><a href="#create-10-tps">create-10-tps</a></li>
                     <li><a href="#create-25-tps">create-25-tps</a></li>
                     <li><a href="#create-50-tps">create-50-tps</a></li>
+                    <li><a href="#read-10-tps">read-10-tps</a></li>
+                    <li><a href="#read-25-tps">read-25-tps</a></li>
+                    <li><a href="#read-50-tps">read-50-tps</a></li>
+                    <li><a href="#update-10-tps">update-10-tps</a></li>
+                    <li><a href="#update-25-tps">update-25-tps</a></li>
+                    <li><a href="#update-50-tps">update-50-tps</a></li>
+                    <li><a href="#delete-10-tps">delete-10-tps</a></li>
+                    <li><a href="#delete-25-tps">delete-25-tps</a></li>
+                    <li><a href="#delete-50-tps">delete-50-tps</a></li>
             </ul>
             <ul>
                 <h3>&nbspSystem under test</h3>
@@ -154,13 +163,40 @@
                     </tr>
 
                     <tr>
-                         <td>create-10-tps</td> <td>99</td> <td>0</td> <td>10.3</td> <td>2.19</td> <td>0.13</td> <td>0.82</td> <td>8.9</td>
+                         <td>create-10-tps</td> <td>100</td> <td>0</td> <td>10.2</td> <td>2.76</td> <td>0.11</td> <td>0.83</td> <td>10.0</td>
                     </tr>
                     <tr>
-                         <td>create-25-tps</td> <td>249</td> <td>0</td> <td>25.3</td> <td>2.07</td> <td>0.07</td> <td>0.36</td> <td>21.3</td>
+                         <td>create-25-tps</td> <td>250</td> <td>0</td> <td>25.2</td> <td>1.08</td> <td>0.10</td> <td>0.45</td> <td>24.9</td>
                     </tr>
                     <tr>
-                         <td>create-50-tps</td> <td>498</td> <td>0</td> <td>50.3</td> <td>2.10</td> <td>0.10</td> <td>0.32</td> <td>41.9</td>
+                         <td>create-50-tps</td> <td>500</td> <td>0</td> <td>50.2</td> <td>0.22</td> <td>0.03</td> <td>0.11</td> <td>50.1</td>
+                    </tr>
+                    <tr>
+                         <td>read-10-tps</td> <td>100</td> <td>0</td> <td>10.2</td> <td>0.03</td> <td>0.00</td> <td>0.01</td> <td>10.2</td>
+                    </tr>
+                    <tr>
+                         <td>read-25-tps</td> <td>250</td> <td>0</td> <td>25.2</td> <td>0.01</td> <td>0.00</td> <td>0.01</td> <td>25.2</td>
+                    </tr>
+                    <tr>
+                         <td>read-50-tps</td> <td>500</td> <td>0</td> <td>50.2</td> <td>0.02</td> <td>0.00</td> <td>0.01</td> <td>50.2</td>
+                    </tr>
+                    <tr>
+                         <td>update-10-tps</td> <td>100</td> <td>0</td> <td>10.2</td> <td>0.85</td> <td>0.03</td> <td>0.44</td> <td>10.2</td>
+                    </tr>
+                    <tr>
+                         <td>update-25-tps</td> <td>250</td> <td>0</td> <td>25.2</td> <td>0.40</td> <td>0.03</td> <td>0.19</td> <td>25.1</td>
+                    </tr>
+                    <tr>
+                         <td>update-50-tps</td> <td>500</td> <td>0</td> <td>50.2</td> <td>0.32</td> <td>0.03</td> <td>0.13</td> <td>50.0</td>
+                    </tr>
+                    <tr>
+                         <td>delete-10-tps</td> <td>100</td> <td>0</td> <td>10.2</td> <td>0.84</td> <td>0.03</td> <td>0.44</td> <td>10.2</td>
+                    </tr>
+                    <tr>
+                         <td>delete-25-tps</td> <td>250</td> <td>0</td> <td>25.2</td> <td>0.37</td> <td>0.02</td> <td>0.19</td> <td>25.1</td>
+                    </tr>
+                    <tr>
+                         <td>delete-50-tps</td> <td>400</td> <td>100</td> <td>50.1</td> <td>0.31</td> <td>0.04</td> <td>0.13</td> <td>49.8</td>
                     </tr>
                 </table>
             </div>
@@ -178,7 +214,7 @@
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>create-10-tps</td> <td>99</td> <td>0</td> <td>10.3</td> <td>2.19</td> <td>0.13</td> <td>0.82</td> <td>8.9</td>
+                                     <td>create-10-tps</td> <td>100</td> <td>0</td> <td>10.2</td> <td>2.76</td> <td>0.11</td> <td>0.83</td> <td>10.0</td>
                                 </tr>
                             </table>
                         <h3>Resource utilization for create-10-tps</h3>
@@ -198,7 +234,7 @@
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>create-25-tps</td> <td>249</td> <td>0</td> <td>25.3</td> <td>2.07</td> <td>0.07</td> <td>0.36</td> <td>21.3</td>
+                                     <td>create-25-tps</td> <td>250</td> <td>0</td> <td>25.2</td> <td>1.08</td> <td>0.10</td> <td>0.45</td> <td>24.9</td>
                                 </tr>
                             </table>
                         <h3>Resource utilization for create-25-tps</h3>
@@ -218,10 +254,190 @@
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>create-50-tps</td> <td>498</td> <td>0</td> <td>50.3</td> <td>2.10</td> <td>0.10</td> <td>0.32</td> <td>41.9</td>
+                                     <td>create-50-tps</td> <td>500</td> <td>0</td> <td>50.2</td> <td>0.22</td> <td>0.03</td> <td>0.11</td> <td>50.1</td>
                                 </tr>
                             </table>
                         <h3>Resource utilization for create-50-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="read-10-tps">
+                <h2>Benchmark round: read-10-tps</h2>
+                <p>ReadTransaction 10 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 10
+</pre>
+                        <h3>Performance metrics for read-10-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>read-10-tps</td> <td>100</td> <td>0</td> <td>10.2</td> <td>0.03</td> <td>0.00</td> <td>0.01</td> <td>10.2</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for read-10-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="read-25-tps">
+                <h2>Benchmark round: read-25-tps</h2>
+                <p>ReadTransaction 25 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 25
+</pre>
+                        <h3>Performance metrics for read-25-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>read-25-tps</td> <td>250</td> <td>0</td> <td>25.2</td> <td>0.01</td> <td>0.00</td> <td>0.01</td> <td>25.2</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for read-25-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="read-50-tps">
+                <h2>Benchmark round: read-50-tps</h2>
+                <p>ReadTransaction 50 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 50
+</pre>
+                        <h3>Performance metrics for read-50-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>read-50-tps</td> <td>500</td> <td>0</td> <td>50.2</td> <td>0.02</td> <td>0.00</td> <td>0.01</td> <td>50.2</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for read-50-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="update-10-tps">
+                <h2>Benchmark round: update-10-tps</h2>
+                <p>UpdateTransaction 10 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 10
+</pre>
+                        <h3>Performance metrics for update-10-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>update-10-tps</td> <td>100</td> <td>0</td> <td>10.2</td> <td>0.85</td> <td>0.03</td> <td>0.44</td> <td>10.2</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for update-10-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="update-25-tps">
+                <h2>Benchmark round: update-25-tps</h2>
+                <p>UpdateTransaction 25 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 25
+</pre>
+                        <h3>Performance metrics for update-25-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>update-25-tps</td> <td>250</td> <td>0</td> <td>25.2</td> <td>0.40</td> <td>0.03</td> <td>0.19</td> <td>25.1</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for update-25-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="update-50-tps">
+                <h2>Benchmark round: update-50-tps</h2>
+                <p>UpdateTransaction 50 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 50
+</pre>
+                        <h3>Performance metrics for update-50-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>update-50-tps</td> <td>500</td> <td>0</td> <td>50.2</td> <td>0.32</td> <td>0.03</td> <td>0.13</td> <td>50.0</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for update-50-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="delete-10-tps">
+                <h2>Benchmark round: delete-10-tps</h2>
+                <p>DeleteTransaction 10 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 10
+</pre>
+                        <h3>Performance metrics for delete-10-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>delete-10-tps</td> <td>100</td> <td>0</td> <td>10.2</td> <td>0.84</td> <td>0.03</td> <td>0.44</td> <td>10.2</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for delete-10-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="delete-25-tps">
+                <h2>Benchmark round: delete-25-tps</h2>
+                <p>DeleteTransaction 25 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 25
+</pre>
+                        <h3>Performance metrics for delete-25-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>delete-25-tps</td> <td>250</td> <td>0</td> <td>25.2</td> <td>0.37</td> <td>0.02</td> <td>0.19</td> <td>25.1</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for delete-25-tps</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="delete-50-tps">
+                <h2>Benchmark round: delete-50-tps</h2>
+                <p>DeleteTransaction 50 TPS</p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 50
+</pre>
+                        <h3>Performance metrics for delete-50-tps</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>delete-50-tps</td> <td>400</td> <td>100</td> <td>50.1</td> <td>0.31</td> <td>0.04</td> <td>0.13</td> <td>49.8</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for delete-50-tps</h3>
             </div>
 
             <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;">
@@ -230,7 +446,7 @@
                 <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">name: transaction-log-benchmark
 description: Benchmark Hyperledger Fabric transaction-log chaincode
 workers:
-  number: 3
+  number: 2
 rounds:
   - label: create-10-tps
     description: CreateTransaction 10 TPS
@@ -268,6 +484,123 @@ rounds:
       arguments:
         contractId: transaction-log
         prefix: create50
+  - label: read-10-tps
+    description: ReadTransaction 10 TPS
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: caliper&#x2F;workloads&#x2F;readTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: read10
+        assetCount: 50
+  - label: read-25-tps
+    description: ReadTransaction 25 TPS
+    txNumber: 250
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: caliper&#x2F;workloads&#x2F;readTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: read25
+        assetCount: 50
+  - label: read-50-tps
+    description: ReadTransaction 50 TPS
+    txNumber: 500
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: caliper&#x2F;workloads&#x2F;readTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: read50
+        assetCount: 50
+  - label: update-10-tps
+    description: UpdateTransaction 10 TPS
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: caliper&#x2F;workloads&#x2F;updateTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: update10
+        assetCount: 50
+  - label: update-25-tps
+    description: UpdateTransaction 25 TPS
+    txNumber: 250
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: caliper&#x2F;workloads&#x2F;updateTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: update25
+        assetCount: 50
+  - label: update-50-tps
+    description: UpdateTransaction 50 TPS
+    txNumber: 500
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: caliper&#x2F;workloads&#x2F;updateTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: update50
+        assetCount: 50
+  - label: delete-10-tps
+    description: DeleteTransaction 10 TPS
+    txNumber: 100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: caliper&#x2F;workloads&#x2F;deleteTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: delete10
+        assetCount: 200
+  - label: delete-25-tps
+    description: DeleteTransaction 25 TPS
+    txNumber: 250
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: caliper&#x2F;workloads&#x2F;deleteTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: delete25
+        assetCount: 200
+  - label: delete-50-tps
+    description: DeleteTransaction 50 TPS
+    txNumber: 500
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: caliper&#x2F;workloads&#x2F;deleteTransaction.js
+      arguments:
+        contractId: transaction-log
+        prefix: delete50
+        assetCount: 200
 </pre>
                 <h3>SUT</h3>
                 <pre id="sutdetails">not provided</pre>
