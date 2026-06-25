@@ -2,7 +2,7 @@ test:
   name: transaction-log-benchmark
   description: Benchmark Hyperledger Fabric transaction-log chaincode
   workers:
-    number: 3
+    number: 2
   rounds:
     - label: create-10-tps
       description: CreateTransaction 10 TPS
@@ -42,3 +42,132 @@ test:
         arguments:
           contractId: transaction-log
           prefix: create50
+
+
+    - label: read-10-tps
+      description: ReadTransaction 10 TPS
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: caliper/workloads/readTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: read10
+          assetCount: 200
+
+    - label: read-25-tps
+      description: ReadTransaction 25 TPS
+      txNumber: 250
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 25
+      workload:
+        module: caliper/workloads/readTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: read25
+          assetCount: 200
+
+    - label: read-50-tps
+      description: ReadTransaction 50 TPS
+      txNumber: 500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: caliper/workloads/readTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: read50
+          assetCount: 200
+
+
+    - label: update-10-tps
+      description: UpdateTransaction 10 TPS
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: caliper/workloads/updateTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: update10
+          assetCount: 200
+
+    - label: update-25-tps
+      description: UpdateTransaction 25 TPS
+      txNumber: 250
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 25
+      workload:
+        module: caliper/workloads/updateTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: update25
+          assetCount: 200
+
+    - label: update-50-tps
+      description: UpdateTransaction 50 TPS
+      txNumber: 500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: caliper/workloads/updateTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: update50
+          assetCount: 200
+
+
+    - label: delete-10-tps
+      description: DeleteTransaction 10 TPS
+      txNumber: 100
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: caliper/workloads/deleteTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: delete10
+          assetCount: 200
+
+    - label: delete-25-tps
+      description: DeleteTransaction 25 TPS
+      txNumber: 250
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 25
+      workload:
+        module: caliper/workloads/deleteTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: delete25
+          assetCount: 200
+
+    - label: delete-50-tps
+      description: DeleteTransaction 50 TPS
+      txNumber: 500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: caliper/workloads/deleteTransaction.js
+        arguments:
+          contractId: transaction-log
+          prefix: delete50
+          assetCount: 200
