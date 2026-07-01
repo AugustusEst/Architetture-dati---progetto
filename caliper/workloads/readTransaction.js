@@ -7,23 +7,25 @@ class ReadTransactionWorkload extends WorkloadModuleBase {
         await super.initializeWorkloadModule(workerIndex, totalWorkers, roundIndex, roundArguments, sutAdapter, sutContext);
         this.contractId = this.roundArguments.contractId;
         this.assetCount = this.roundArguments.assetCount;
-        for (let i = 0; i < this.assetCount; i++) {
-            const transactionId = `${this.workerIndex}-${i}`;
-            const request = {
-                contractId: this.contractId,
-                contractFunction: 'CreateTransaction',
-                contractArguments: [
-                    transactionId,
-                    new Date().toISOString(),
-                    `sender-${this.workerIndex}`,
-                    `receiver-${this.workerIndex}`,
-                    '100.00',
-                    'PAYMENT'
-                ],
-                readOnly: false
-            };   
-            await this.sutAdapter.sendRequests(request);
-        } 
+        if (this.roundIndex === 0) {
+            for (let i = 0; i < this.assetCount; i++) {
+                const transactionId = `${this.workerIndex}-${i}`;
+                const request = {
+                    contractId: this.contractId,
+                    contractFunction: 'CreateTransaction',
+                    contractArguments: [
+                        transactionId,
+                        new Date().toISOString(),
+                        `sender-${this.workerIndex}`,
+                        `receiver-${this.workerIndex}`,
+                        '100.00',
+                        'PAYMENT'
+                    ],
+                    readOnly: false
+                };   
+                await this.sutAdapter.sendRequests(request);
+            }
+        }   
     }
 
     async submitTransaction() {

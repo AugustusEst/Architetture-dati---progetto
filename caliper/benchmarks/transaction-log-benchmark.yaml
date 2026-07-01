@@ -56,7 +56,7 @@ test:
         arguments:
           contractId: transaction-log
           prefix: read10
-          assetCount: 50
+          assetCount: 250
 
     - label: read-25-tps
       description: ReadTransaction 25 TPS
@@ -70,7 +70,7 @@ test:
         arguments:
           contractId: transaction-log
           prefix: read25
-          assetCount: 50
+          assetCount: 250
 
     - label: read-50-tps
       description: ReadTransaction 50 TPS
@@ -84,7 +84,7 @@ test:
         arguments:
           contractId: transaction-log
           prefix: read50
-          assetCount: 50
+          assetCount: 250
 
 
     - label: update-10-tps
@@ -99,7 +99,7 @@ test:
         arguments:
           contractId: transaction-log
           prefix: update10
-          assetCount: 50
+          assetCount: 250
 
     - label: update-25-tps
       description: UpdateTransaction 25 TPS
@@ -113,7 +113,7 @@ test:
         arguments:
           contractId: transaction-log
           prefix: update25
-          assetCount: 50
+          assetCount: 250
 
     - label: update-50-tps
       description: UpdateTransaction 50 TPS
@@ -127,7 +127,7 @@ test:
         arguments:
           contractId: transaction-log
           prefix: update50
-          assetCount: 50
+          assetCount: 250
 
 
     - label: delete-10-tps
@@ -142,7 +142,7 @@ test:
         arguments:
           contractId: transaction-log
           prefix: delete10
-          assetCount: 200
+          assetCount: 250
 
     - label: delete-25-tps
       description: DeleteTransaction 25 TPS
@@ -156,7 +156,7 @@ test:
         arguments:
           contractId: transaction-log
           prefix: delete25
-          assetCount: 200
+          assetCount: 250
 
     - label: delete-50-tps
       description: DeleteTransaction 50 TPS
@@ -170,4 +170,4 @@ test:
         arguments:
           contractId: transaction-log
           prefix: delete50
-          assetCount: 200
+          assetCount: 250
