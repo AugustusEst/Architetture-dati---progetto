@@ -8,7 +8,7 @@ class ReadTransactionWorkload extends WorkloadModuleBase {
         this.contractId = this.roundArguments.contractId;
         this.assetCount = this.roundArguments.assetCount;
         for (let i = 0; i < this.assetCount; i++) {
-            const transactionId = `${this.roundIndex}-${this.workerIndex}-${i}`;
+            const transactionId = `${this.workerIndex}-${i}`;
             const request = {
                 contractId: this.contractId,
                 contractFunction: 'CreateTransaction',
@@ -27,7 +27,7 @@ class ReadTransactionWorkload extends WorkloadModuleBase {
     }
 
     async submitTransaction() {
-        const transactionId = `${this.roundIndex}-${this.workerIndex}-${Math.floor(Math.random() * this.assetCount)}`;
+        const transactionId = `${this.workerIndex}-${Math.floor(Math.random() * this.assetCount)}`;
         const request = {
             contractId: this.contractId,
             contractFunction: 'ReadTransaction',
