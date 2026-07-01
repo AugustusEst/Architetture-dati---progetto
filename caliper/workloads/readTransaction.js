@@ -7,7 +7,7 @@ class ReadTransactionWorkload extends WorkloadModuleBase {
         await super.initializeWorkloadModule(workerIndex, totalWorkers, roundIndex, roundArguments, sutAdapter, sutContext);
         this.contractId = this.roundArguments.contractId;
         this.assetCount = this.roundArguments.assetCount;
-        if (this.roundIndex === 0) {
+        if (this.roundIndex === 4) {
             for (let i = 0; i < this.assetCount; i++) {
                 const transactionId = `${this.workerIndex}-${i}`;
                 const request = {

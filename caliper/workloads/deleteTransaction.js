@@ -8,7 +8,7 @@ class DeleteTransactionWorkload extends WorkloadModuleBase {
         this.transactionIndex = 0;
         this.contractId = this.roundArguments.contractId;
         this.assetCount = this.roundArguments.assetCount;
-        /*for (let i = 0; i < this.assetCount; i++) {
+        for (let i = 0; i < this.assetCount; i++) {
             const transactionId = `${this.roundIndex}-${this.workerIndex}-${i}`;
             const request = {
                 contractId: this.contractId,
@@ -24,12 +24,12 @@ class DeleteTransactionWorkload extends WorkloadModuleBase {
                 readOnly: false
             };   
             await this.sutAdapter.sendRequests(request);
-        } */
+        } 
     }
 
     async submitTransaction() {
         this.transactionIndex++;
-        const transactionId = `${this.workerIndex}-${this.transactionIndex % this.assetCount}`;
+        const transactionId = `${this.roundIndex}-${this.workerIndex}-${this.transactionIndex % this.assetCount}`;
         const request = {
             contractId: this.contractId,
             contractFunction: 'DeleteTransaction',
