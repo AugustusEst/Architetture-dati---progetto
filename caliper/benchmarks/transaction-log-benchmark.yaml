@@ -6,11 +6,11 @@ test:
   rounds:
     - label: create-10-tps
       description: CreateTransaction 10 TPS
-      txNumber: 100
+      txNumber: 1000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: caliper/workloads/createTransaction.js
         arguments:
@@ -19,11 +19,11 @@ test:
 
     - label: create-25-tps
       description: CreateTransaction 25 TPS
-      txNumber: 250
+      txNumber: 2500
       rateControl:
         type: fixed-rate
         opts:
-          tps: 25
+          tps: 250
       workload:
         module: caliper/workloads/createTransaction.js
         arguments:
@@ -32,11 +32,11 @@ test:
 
     - label: create-50-tps
       description: CreateTransaction 50 TPS
-      txNumber: 500
+      txNumber: 5000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 50
+          tps: 500
       workload:
         module: caliper/workloads/createTransaction.js
         arguments:
@@ -46,11 +46,11 @@ test:
 
     - label: read-10-tps
       description: ReadTransaction 10 TPS
-      txNumber: 100
+      txNumber: 10000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 1000
       workload:
         module: caliper/workloads/readTransaction.js
         arguments:
@@ -60,11 +60,11 @@ test:
 
     - label: read-25-tps
       description: ReadTransaction 25 TPS
-      txNumber: 250
+      txNumber: 25000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 25
+          tps: 2500
       workload:
         module: caliper/workloads/readTransaction.js
         arguments:
@@ -74,11 +74,11 @@ test:
 
     - label: read-50-tps
       description: ReadTransaction 50 TPS
-      txNumber: 500
+      txNumber: 50000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 50
+          tps: 5000
       workload:
         module: caliper/workloads/readTransaction.js
         arguments:
@@ -89,11 +89,11 @@ test:
 
     - label: update-10-tps
       description: UpdateTransaction 10 TPS
-      txNumber: 100
+      txNumber: 1000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 10
+          tps: 100
       workload:
         module: caliper/workloads/updateTransaction.js
         arguments:
@@ -103,11 +103,11 @@ test:
 
     - label: update-25-tps
       description: UpdateTransaction 25 TPS
-      txNumber: 250
+      txNumber: 2500
       rateControl:
         type: fixed-rate
         opts:
-          tps: 25
+          tps: 250
       workload:
         module: caliper/workloads/updateTransaction.js
         arguments:
@@ -117,11 +117,11 @@ test:
 
     - label: update-50-tps
       description: UpdateTransaction 50 TPS
-      txNumber: 500
+      txNumber: 5000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 50
+          tps: 500
       workload:
         module: caliper/workloads/updateTransaction.js
         arguments:
