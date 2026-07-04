@@ -4,8 +4,8 @@ test:
   workers:
     number: 2
   rounds:
-    - label: create-10-tps
-      description: CreateTransaction 10 TPS
+    - label: create-100-tps
+      description: CreateTransaction 100 TPS
       txNumber: 1000
       rateControl:
         type: fixed-rate
@@ -15,10 +15,10 @@ test:
         module: caliper/workloads/createTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: create10
+          prefix: create100
 
-    - label: create-25-tps
-      description: CreateTransaction 25 TPS
+    - label: create-250-tps
+      description: CreateTransaction 250 TPS
       txNumber: 2500
       rateControl:
         type: fixed-rate
@@ -28,10 +28,10 @@ test:
         module: caliper/workloads/createTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: create25
+          prefix: create250
 
-    - label: create-50-tps
-      description: CreateTransaction 50 TPS
+    - label: create-500-tps
+      description: CreateTransaction 500 TPS
       txNumber: 5000
       rateControl:
         type: fixed-rate
@@ -41,11 +41,11 @@ test:
         module: caliper/workloads/createTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: create50
+          prefix: create500
 
 
-    - label: read-10-tps
-      description: ReadTransaction 10 TPS
+    - label: read-1000-tps
+      description: ReadTransaction 1000 TPS
       txNumber: 10000
       rateControl:
         type: fixed-rate
@@ -55,11 +55,11 @@ test:
         module: caliper/workloads/readTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: read10
+          prefix: read1000
           assetCount: 100
 
-    - label: read-25-tps
-      description: ReadTransaction 25 TPS
+    - label: read-2500-tps
+      description: ReadTransaction 2500 TPS
       txNumber: 25000
       rateControl:
         type: fixed-rate
@@ -69,11 +69,11 @@ test:
         module: caliper/workloads/readTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: read25
+          prefix: read2500
           assetCount: 100
 
-    - label: read-50-tps
-      description: ReadTransaction 50 TPS
+    - label: read-5000-tps
+      description: ReadTransaction 5000 TPS
       txNumber: 50000
       rateControl:
         type: fixed-rate
@@ -83,12 +83,12 @@ test:
         module: caliper/workloads/readTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: read50
+          prefix: read5000
           assetCount: 100
 
 
-    - label: update-10-tps
-      description: UpdateTransaction 10 TPS
+    - label: update-100-tps
+      description: UpdateTransaction 100 TPS
       txNumber: 1000
       rateControl:
         type: fixed-rate
@@ -98,11 +98,11 @@ test:
         module: caliper/workloads/updateTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: update10
+          prefix: update100
           assetCount: 100
 
-    - label: update-25-tps
-      description: UpdateTransaction 25 TPS
+    - label: update-250-tps
+      description: UpdateTransaction 250 TPS
       txNumber: 2500
       rateControl:
         type: fixed-rate
@@ -112,11 +112,11 @@ test:
         module: caliper/workloads/updateTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: update25
+          prefix: update250
           assetCount: 100
 
-    - label: update-50-tps
-      description: UpdateTransaction 50 TPS
+    - label: update-500-tps
+      description: UpdateTransaction 500 TPS
       txNumber: 5000
       rateControl:
         type: fixed-rate
@@ -126,7 +126,7 @@ test:
         module: caliper/workloads/updateTransaction.js
         arguments:
           contractId: transaction-log
-          prefix: update50
+          prefix: update500
           assetCount: 100
 
 
